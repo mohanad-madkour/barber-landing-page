@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BARBER — KEEP IT SHARPER | THE ORIGINAL BARBER</title>
+  <meta name="description" content="BARBER — men's grooming with five branches. Haircuts, beard shaves and trims, coloring and massage. Pick the nearest branch to you." />
+
+  <link rel="canonical" href="https://barberegypt.com/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://barberegypt.com/" />
+  <meta property="og:title" content="BARBER — KEEP IT SHARPER" />
+  <meta property="og:description" content="THE ORIGINAL BARBER — خمسة فروع. اختر الأقرب إليك." />
+  <meta property="og:image" content="https://barberegypt.com/logo-layers/logo-full-transparent.png" />
+  <meta property="og:locale" content="ar_EG" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Poppins:wght@500;600;700;800&family=Inter:wght@400;600;700&family=Cinzel:wght@400;500;600;700&family=Aref+Ruqaa+Ink:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="logo-layers/logo-mustache.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="css/styles.css?v=52" />
+
+  <!-- schema.org LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HairSalon",
+    "name": "BARBER",
+    "slogan": "KEEP IT SHARPER",
+    "image": "https://barberegypt.com/logo-layers/logo-full-transparent.png",
+    "url": "https://barberegypt.com",
+    "telephone": "+201159125229",
+    "sameAs": ["https://www.instagram.com/barber._.eg"],
+    "department": [
+      { "@type": "HairSalon", "name": "BARBER — Craft Zone", "address": "بلوك 2" },
+      { "@type": "HairSalon", "name": "BARBER — B15", "address": "بجوار محمد الفار ماركت" },
+      { "@type": "HairSalon", "name": "BARBER — B12", "address": "بجوار بيت الجملة ماركت" },
+      { "@type": "HairSalon", "name": "BARBER — B10", "address": "بجوار New Benny Market" },
+      { "@type": "HairSalon", "name": "BARBER — B8", "address": "خلف The Mart" }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="brand" aria-label="BARBER">
+        <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="brand__logo" width="45" height="68" decoding="async" fetchpriority="high" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about" data-en="About" data-ar="من نحن">About</a>
+        <a href="#services" data-en="Services" data-ar="الخدمات">Services</a>
+        <a href="#gallery" data-en="Gallery" data-ar="الجاليري">Gallery</a>
+        <a href="#branches" data-en="Branches" data-ar="الفروع">Branches</a>
+        <a href="#reviews" data-en="Reviews" data-ar="الآراء">Reviews</a>
+        <a href="#contact" data-en="Contact" data-ar="تواصل">Contact</a>
+        <button class="lang-toggle lang-toggle--nav" id="langToggleNav" type="button" aria-label="تبديل اللغة / Switch language"></button>
+      </nav>
+
+      <div class="header__actions">
+        <button class="lang-toggle" id="langToggle" type="button" aria-label="تبديل اللغة / Switch language"></button>
+        <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__videos" aria-hidden="true">
+      <video class="hero__video is-active" id="heroV1" muted playsinline autoplay loop preload="auto" disablepictureinpicture>
+        <source src="videos/scene1-scissors.mp4" type="video/mp4" />
+      </video>
+      <video class="hero__video" id="heroV2" muted playsinline autoplay loop preload="auto" disablepictureinpicture>
+        <source src="videos/scene2-clipper.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="hero__overlay"></div>
+    <div class="hair-fall" id="hairFall" aria-hidden="true"></div>
+
+    <div class="container hero__content">
+      <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="hero__logo" width="180" height="270" decoding="async" />
+      <h1 class="hero__tagline">THE ORIGINAL <span>BARBER</span></h1>
+      <p class="hero__sub">Cuts • Beards • Fades</p>
+      <div class="hero__cta">
+        <a href="#services" class="btn btn--primary" data-en="Our Services" data-ar="تصفّح خدماتنا">Our Services</a>
+        <a href="https://wa.me/201159125229" target="_blank" rel="noopener" class="btn btn--ghost" data-en="WhatsApp Us" data-ar="تواصل عبر واتساب">WhatsApp Us</a>
+      </div>
+    </div>
+    <a href="#services" class="hero__scroll" aria-label="Scroll down"><span></span></a>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="about">
+    <div class="container about__inner">
+      <div class="about__media reveal">
+        <img src="images/about.jpg" alt="BARBER — interior" loading="lazy" decoding="async" />
+      </div>
+
+      <div class="about__content reveal">
+        <span class="section__kicker">ABOUT US</span>
+        <h2 class="section__title">About BARBER</h2>
+        <p class="about__lead">At BARBER, every cut is handled by skilled professionals who obsess over the details. Our tools are always sanitized and our space is clean and comfortable — so you can sit back and enjoy the experience. With 5 branches across Madinaty, we're always close to you.</p>
+
+        <ul class="about__features">
+          <li>
+            <span class="about__ficon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg></span>
+            <span>Skilled, professional barbers</span>
+          </li>
+          <li class="is-highlight">
+            <span class="about__ficon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <span>5 branches across Madinaty</span>
+          </li>
+          <li>
+            <span class="about__ficon"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>
+            <span>Sanitized tools, clean &amp; comfortable space</span>
+          </li>
+        </ul>
+
+        <a href="#branches" class="btn btn--primary">Find your branch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="section services" id="services">
+    <div class="container services__inner">
+      <!-- LEFT: brand + campaign -->
+      <aside class="services__brand reveal">
+        <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="services__logo" loading="lazy" decoding="async" />
+        <div class="services__campaign">
+          <span class="services__campaign-title" lang="ar" dir="rtl">نعيماً</span>
+        </div>
+      </aside>
+
+      <!-- RIGHT: important services -->
+      <div class="services__panel reveal">
+        <header class="section__head services__head">
+          <span class="section__kicker">SERVICES</span>
+          <h2 class="section__title" data-en="Our Services" data-ar="خدماتنا">Our Services</h2>
+        </header>
+        <div class="services__rows" id="servicesGrid"></div>
+        <p class="services__note" data-en="* Full price list available in-store — message us on WhatsApp to confirm." data-ar="* قائمة الأسعار الكاملة متوفّرة في الفرع — تواصل عبر واتساب للتأكيد.">* Full price list available in-store — message us on WhatsApp to confirm.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Barber pole divider -->
+  <div class="scissor-strip" aria-hidden="true"></div>
+
+  <!-- ============ GALLERY ============ -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__kicker">GALLERY</span>
+        <h2 class="section__title" data-en="Our Work &amp; Space" data-ar="من أعمالنا">Our Work &amp; Space</h2>
+        <p class="section__lead" data-en="Shots from the shop and real cuts." data-ar="لقطات من صالوننا ومن قصّات حقيقية.">Shots from the shop and real cuts.</p>
+      </header>
+      <div class="gallery__carousel">
+        <button class="gallery__arrow gallery__arrow--prev" id="galPrev" type="button" aria-label="Previous">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="gallery__track" id="galleryGrid"></div>
+        <button class="gallery__arrow gallery__arrow--next" id="galNext" type="button" aria-label="Next">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee-strip" id="marquee" aria-hidden="true"></div>
+
+  <!-- ============ BRANCHES ============ -->
+  <section class="section branches" id="branches">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__kicker">LOCATIONS</span>
+        <h2 class="section__title" data-en="Branches — Pick the Nearest" data-ar="فروعنا — اختر الأقرب إليك">Branches — Pick the Nearest</h2>
+        <p class="section__lead" data-en="Tap a pin on the map to see the branch." data-ar="اضغط على أي علامة في الخريطة لعرض تفاصيل الفرع.">Tap a pin on the map to see the branch.</p>
+      </header>
+
+      <div class="branch-map" id="branchMap"></div>
+    </div>
+  </section>
+
+  <!-- ============ REVIEWS ============ -->
+  <!-- Real Google reviews pulled from the branch listings (B15 & Craft Zone). Verbatim quotes. -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__kicker">REVIEWS</span>
+        <h2 class="section__title" data-en="What Our Clients Say" data-ar="آراء عملائنا">What Our Clients Say</h2>
+        <p class="section__lead" data-en="Verified reviews from our clients on Google." data-ar="تقييمات موثّقة من عملائنا على Google.">Verified reviews from our clients on Google.</p>
+      </header>
+
+      <div class="reviews__viewport">
+        <div class="reviews__track" id="reviewsTrack">
+        <figure class="review-card reveal">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">G</span>
+            <div class="review-card__id">
+              <span class="review-card__name" dir="ltr">gamal fathy</span>
+              <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+            </div>
+            <i class="fa-brands fa-google review-card__src" title="Google" aria-hidden="true"></i>
+          </div>
+          <blockquote class="review-card__text" dir="rtl">ممتازين ما شاء الله، ومحمد محترم وشاطر.</blockquote>
+          <span class="review-card__meta" dir="ltr">B15 · Google</span>
+        </figure>
+
+        <figure class="review-card reveal">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">E</span>
+            <div class="review-card__id">
+              <span class="review-card__name" dir="ltr">Eyad Mahmoud</span>
+              <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+            </div>
+            <i class="fa-brands fa-google review-card__src" title="Google" aria-hidden="true"></i>
+          </div>
+          <blockquote class="review-card__text" dir="rtl">خدمة متميزة جدًا، قيمة مقابل سعر، والعمالة نضاف جدًا ومهندمين طول الوقت. أنصح بيه جدًا.</blockquote>
+          <span class="review-card__meta" dir="ltr">B15 · Google</span>
+        </figure>
+
+        <figure class="review-card reveal">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">S</span>
+            <div class="review-card__id">
+              <span class="review-card__name" dir="ltr">Seif Eldesouky</span>
+              <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+            </div>
+            <i class="fa-brands fa-google review-card__src" title="Google" aria-hidden="true"></i>
+          </div>
+          <blockquote class="review-card__text" dir="rtl">كل اللي في المحل ناس محترمة ومتعاونة وأخلاقهم عالية أوي، من أنضف المحلات اللي في مدينتي، وإدارة ناجحة.</blockquote>
+          <span class="review-card__meta" dir="ltr">B15 · Google</span>
+        </figure>
+
+        <figure class="review-card reveal">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">S</span>
+            <div class="review-card__id">
+              <span class="review-card__name" dir="ltr">Soha Mohamed</span>
+              <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+            </div>
+            <i class="fa-brands fa-google review-card__src" title="Google" aria-hidden="true"></i>
+          </div>
+          <blockquote class="review-card__text" dir="rtl">لديهم خبرة جيدة وأسعار مناسبة 👍</blockquote>
+          <span class="review-card__meta" dir="ltr">Craft Zone · Google</span>
+        </figure>
+
+        <figure class="review-card reveal">
+          <div class="review-card__head">
+            <span class="review-card__avatar" aria-hidden="true">D</span>
+            <div class="review-card__id">
+              <span class="review-card__name" dir="ltr">D A</span>
+              <span class="review-card__stars" aria-label="5 out of 5">★★★★★</span>
+            </div>
+            <i class="fa-brands fa-google review-card__src" title="Google" aria-hidden="true"></i>
+          </div>
+          <blockquote class="review-card__text" data-en="Best for kids." data-ar="الأفضل للأطفال.">Best for kids.</blockquote>
+          <span class="review-card__meta" dir="ltr">Craft Zone · Google</span>
+        </figure>
+        </div>
+      </div>
+
+      <div class="reviews__cta">
+        <details class="review-menu">
+          <summary class="btn btn--primary review-menu__btn">
+            <i class="fa-brands fa-google" aria-hidden="true"></i>
+            <span data-en="Write a review on Google" data-ar="اكتب مراجعة على Google">Write a review on Google</span>
+            <i class="fa-solid fa-chevron-down review-menu__caret" aria-hidden="true"></i>
+          </summary>
+          <div class="review-menu__list">
+            <span class="review-menu__label" data-en="Choose your branch" data-ar="اختر فرعك">Choose your branch</span>
+            <a href="https://maps.app.goo.gl/CZsrdZdvszbi1Eo69" target="_blank" rel="noopener">B10</a>
+            <a href="https://maps.app.goo.gl/RiEPsiAHepFNC2aQ6" target="_blank" rel="noopener">B12</a>
+            <a href="https://maps.app.goo.gl/6YmmWnykg3egYY6c7" target="_blank" rel="noopener">B15</a>
+            <a href="https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9" target="_blank" rel="noopener">Craft Zone</a>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contact">
+    <div class="pole-deco pole-deco--left" aria-hidden="true">
+      <span class="pole-deco__thread"></span>
+      <span class="pole-deco__cap"></span>
+      <span class="pole-deco__body"></span>
+      <span class="pole-deco__base"></span>
+    </div>
+    <div class="pole-deco pole-deco--right" aria-hidden="true">
+      <span class="pole-deco__thread"></span>
+      <span class="pole-deco__cap"></span>
+      <span class="pole-deco__body"></span>
+      <span class="pole-deco__base"></span>
+    </div>
+    <div class="container contact__inner">
+      <header class="section__head">
+        <span class="section__kicker">CONTACT</span>
+        <h2 class="section__title" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h2>
+        <p class="section__lead" data-en="The fastest way to reach us." data-ar="أسرع وسيلة للوصول إلينا.">The fastest way to reach us.</p>
+      </header>
+      <div class="contact__links">
+        <div class="contact__row">
+          <a href="https://wa.me/201159125229" target="_blank" rel="noopener" class="contact__link">
+            <i class="fa-brands fa-whatsapp contact__icon contact__icon--wa" aria-hidden="true"></i>
+            <span class="contact__label" data-en="WhatsApp" data-ar="واتساب">WhatsApp</span>
+            <span class="contact__value" dir="ltr">+20 11 5912 5229</span>
+          </a>
+          <a href="https://www.instagram.com/barber._.eg" target="_blank" rel="noopener" class="contact__link">
+            <i class="fa-brands fa-instagram contact__icon contact__icon--ig" aria-hidden="true"></i>
+            <span class="contact__label" data-en="Instagram" data-ar="إنستجرام">Instagram</span>
+            <span class="contact__value" dir="ltr">@barber._.eg</span>
+          </a>
+        </div>
+        <div class="contact__hours">
+          <span class="contact__hours-title" data-en="Working hours" data-ar="مواعيد العمل">Working hours</span>
+          <div class="hours-row"><span class="hours-row__name">B10</span><span class="hours-row__time" dir="ltr">1 PM – 1 AM</span></div>
+          <div class="hours-row"><span class="hours-row__name">B12</span><span class="hours-row__time" dir="ltr">1 PM – 1 AM</span></div>
+          <div class="hours-row"><span class="hours-row__name">B15</span><span class="hours-row__time" dir="ltr">1 PM – 1 AM</span></div>
+          <div class="hours-row"><span class="hours-row__name">Craft Zone</span><span class="hours-row__time" dir="ltr">11 AM – 2 AM</span></div>
+          <div class="hours-row"><span class="hours-row__name">B8</span><span class="hours-row__time" dir="ltr">1 PM – 1 AM</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+
+      <!-- Brand -->
+      <div class="footer__col footer__col--brand">
+        <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="footer__logo" loading="lazy" decoding="async" />
+        <p class="footer__about"
+           data-en="BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience."
+           data-ar="BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience.">BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience.</p>
+        <div class="footer__social">
+          <a href="https://www.instagram.com/barber._.eg" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="https://wa.me/201159125229" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer__col">
+        <h3 class="footer__title" data-en="CONTACT" data-ar="تواصل">CONTACT</h3>
+        <p class="footer__line" data-en="Madinaty — New Cairo, Egypt" data-ar="مدينتي — القاهرة الجديدة، مصر">Madinaty — New Cairo, Egypt</p>
+        <a class="footer__line footer__link" href="https://www.instagram.com/barber._.eg" target="_blank" rel="noopener" dir="ltr">@barber._.eg</a>
+        <a class="footer__line footer__link" href="https://wa.me/201159125229" target="_blank" rel="noopener" dir="ltr">+20 11 5912 5229</a>
+      </div>
+
+      <!-- Hours -->
+      <div class="footer__col">
+        <h3 class="footer__title" data-en="WORKING HOURS" data-ar="مواعيد العمل">WORKING HOURS</h3>
+        <ul class="footer__hours">
+          <li><span data-en="Saturday" data-ar="السبت">Saturday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Sunday" data-ar="الأحد">Sunday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Monday" data-ar="الاثنين">Monday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Tuesday" data-ar="الثلاثاء">Tuesday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Wednesday" data-ar="الأربعاء">Wednesday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Thursday" data-ar="الخميس">Thursday</span><span dir="ltr">1 PM – 1 AM</span></li>
+          <li><span data-en="Friday" data-ar="الجمعة">Friday</span><span dir="ltr">1 PM – 1 AM</span></li>
+        </ul>
+        <p class="footer__note" data-en="Craft Zone: 11 AM – 2 AM" data-ar="Craft Zone: 11 AM – 2 AM" dir="ltr">Craft Zone: 11 AM – 2 AM</p>
+      </div>
+
+      <!-- Branches -->
+      <div class="footer__col">
+        <h3 class="footer__title" data-en="BRANCHES" data-ar="الفروع">BRANCHES</h3>
+        <ul class="footer__links">
+          <li><a href="https://maps.app.goo.gl/wWXc1byb1pg5qFpL7" target="_blank" rel="noopener">B8</a></li>
+          <li><a href="https://maps.app.goo.gl/CZsrdZdvszbi1Eo69" target="_blank" rel="noopener">B10</a></li>
+          <li><a href="https://maps.app.goo.gl/RiEPsiAHepFNC2aQ6" target="_blank" rel="noopener">B12</a></li>
+          <li><a href="https://maps.app.goo.gl/6YmmWnykg3egYY6c7" target="_blank" rel="noopener">B15</a></li>
+          <li><a href="https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9" target="_blank" rel="noopener">Craft Zone</a></li>
+        </ul>
+        <a href="#branches" class="footer__maplink" data-en="View on map →" data-ar="اعرضها على الخريطة →">View on map →</a>
+      </div>
+
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copy" data-en="© 2026 BARBER — All rights reserved" data-ar="© 2026 BARBER — جميع الحقوق محفوظة">© 2026 BARBER — All rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/201159125229" target="_blank" rel="noopener" class="wa-float" aria-label="WhatsApp Us">
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.38 5.07L2 22l5.05-1.33A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2z"/></svg>
+  </a>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img src="" alt="" id="lightboxImg" />
+  </div>
+
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script defer src="js/main.js?v=52"></script>
+</body>
+</html>
