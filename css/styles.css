@@ -526,9 +526,8 @@ a { color: inherit; text-decoration: none; }
   transition: opacity .3s;
 }
 .gallery__item:hover::after { opacity: 1; }
-/* touch devices: no hover, so show photos in colour and drop the hover-only "+" badge */
+/* touch devices: no hover — keep photos black & white, just drop the hover-only "+" badge */
 @media (hover: none) {
-  .gallery__item img { filter: none; }
   .gallery__item::after { display: none; }
 }
 
