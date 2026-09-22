@@ -526,6 +526,11 @@ a { color: inherit; text-decoration: none; }
   transition: opacity .3s;
 }
 .gallery__item:hover::after { opacity: 1; }
+/* touch devices: no hover, so show photos in colour and drop the hover-only "+" badge */
+@media (hover: none) {
+  .gallery__item img { filter: none; }
+  .gallery__item::after { display: none; }
+}
 
 /* ---------- Branches ---------- */
 .branches { background: var(--color-bg-primary); }
@@ -1041,6 +1046,8 @@ a.footer__link:hover { color: var(--color-brass-light); }
   .header__actions { gap: 8px; }
   .lang-toggle { height: 36px; padding: 0 10px; font-size: .85rem; gap: 6px; }
   .brand__logo { height: 54px; }
+  /* match the hero logo to the services ("نعيماً") logo size */
+  .hero__logo { width: min(230px, 78vw); height: auto; }
 
   /* reviews slider: narrower cards on phones */
   .review-card { flex-basis: 78vw; width: 78vw; margin-inline-end: 16px; }
@@ -1055,8 +1062,9 @@ a.footer__link:hover { color: var(--color-brass-light); }
   .services__head .section__kicker, .services__head .section__title { text-align: center; }
 
   /* gallery carousel on mobile */
-  .gallery__arrow { width: 40px; height: 40px; }
-  .gallery__item { width: min(260px, 78vw); padding: 10px 10px 34px; }
+  .gallery__carousel { gap: 4px; }
+  .gallery__arrow { width: 38px; height: 38px; }
+  .gallery__item { width: min(240px, 68vw); padding: 9px 9px 30px; }
 
   /* map: taller so pins have room */
   .branch-map { aspect-ratio: auto; height: 60vh; min-height: 380px; max-height: 520px; }
