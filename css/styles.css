@@ -1046,8 +1046,8 @@ a.footer__link:hover { color: var(--color-brass-light); }
   .header__actions { gap: 8px; }
   .lang-toggle { height: 36px; padding: 0 10px; font-size: .85rem; gap: 6px; }
   .brand__logo { height: 54px; }
-  /* match the hero logo to the services ("نعيماً") logo size */
-  .hero__logo { width: min(230px, 78vw); height: auto; }
+  /* hero logo on phones — slightly smaller than the services logo */
+  .hero__logo { width: min(190px, 62vw); height: auto; }
 
   /* reviews slider: narrower cards on phones */
   .review-card { flex-basis: 78vw; width: 78vw; margin-inline-end: 16px; }
