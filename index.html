@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BARBER Madinaty — Men's Barbershop & Grooming | 5 Branches</title>
-  <meta name="description" content="Premium men's barbershop in Madinaty, New Cairo. Sharp haircuts, beard styling, fades, color & facials across 5 BARBER branches. Find your nearest branch — حلاقة رجالي في مدينتي." />
+  <title>BARBER Madinaty | حلاق رجالي في مدينتي — 5 Branches</title>
+  <meta name="description" content="BARBER — حلاق رجالي في مدينتي بـ 5 فروع (B8، B10، B12، B15، Craft Zone). Men's barbershop in Madinaty, New Cairo: haircuts, fades, beard styling & color. Open daily till 1 AM — book on WhatsApp." />
   <meta name="keywords" content="barber, barbershop, Madinaty, New Cairo, men's haircut, beard, fade, حلاقة رجالي, باربر, مدينتي, القاهرة الجديدة" />
   <meta name="theme-color" content="#141412" />
 
@@ -37,25 +37,288 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icons/7.2.3/css/flag-icons.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="css/styles.css?v=61" />
+  <link rel="stylesheet" href="css/styles.css?v=62" />
 
   <!-- schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
+    "@id": "https://barberegypt.com/#barber",
     "name": "BARBER",
+    "alternateName": [
+      "BARBER Madinaty",
+      "The Barber Madinaty",
+      "Barber Egypt",
+      "باربر مدينتي",
+      "حلاق مدينتي"
+    ],
     "slogan": "KEEP IT SHARPER",
-    "image": "https://barberegypt.com/logo-layers/logo-full-transparent.png",
-    "url": "https://barberegypt.com",
+    "description": "Men's barbershop with 5 branches in Madinaty, New Cairo — haircuts, fades, beard styling, hair color and facials. حلاق رجالي في مدينتي.",
+    "image": "https://barberegypt.com/images/og-image.jpg",
+    "logo": "https://barberegypt.com/logo-layers/logo-full-transparent.png",
+    "url": "https://barberegypt.com/",
     "telephone": "+201159125229",
-    "sameAs": ["https://www.instagram.com/barber._.eg"],
+    "priceRange": "EGP 120–1000",
+    "currenciesAccepted": "EGP",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Madinaty",
+      "addressRegion": "Cairo Governorate",
+      "addressCountry": "EG"
+    },
+    "areaServed": {
+      "@type": "Place",
+      "name": "Madinaty, New Cairo"
+    },
+    "sameAs": [
+      "https://www.instagram.com/barber._.eg"
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "13:00",
+        "closes": "01:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Haircut"
+          },
+          "price": "180",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Haircut + Beard"
+          },
+          "price": "300",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Beard"
+          },
+          "price": "150",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Blow-dry"
+          },
+          "price": "120",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Protein Treatment"
+          },
+          "price": "1000",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Hair Color"
+          },
+          "price": "300",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Beard Color"
+          },
+          "price": "150",
+          "priceCurrency": "EGP"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Facial Cleansing"
+          },
+          "price": "350",
+          "priceCurrency": "EGP"
+        }
+      ]
+    },
     "department": [
-      { "@type": "HairSalon", "name": "BARBER — Craft Zone", "address": "بلوك 2" },
-      { "@type": "HairSalon", "name": "BARBER — B15", "address": "بجوار محمد الفار ماركت" },
-      { "@type": "HairSalon", "name": "BARBER — B12", "address": "بجوار بيت الجملة ماركت" },
-      { "@type": "HairSalon", "name": "BARBER — B10", "address": "بجوار New Benny Market" },
-      { "@type": "HairSalon", "name": "BARBER — B8", "address": "خلف The Mart" }
+      {
+        "@type": "HairSalon",
+        "name": "BARBER Madinaty — B8",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "خلف The Mart، B8، مدينتي",
+          "addressLocality": "Madinaty",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "hasMap": "https://maps.app.goo.gl/wWXc1byb1pg5qFpL7",
+        "telephone": "+201159125229",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "13:00",
+            "closes": "01:00"
+          }
+        ]
+      },
+      {
+        "@type": "HairSalon",
+        "name": "BARBER Madinaty — B10",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "بجوار New Benny Market، B10، مدينتي",
+          "addressLocality": "Madinaty",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "hasMap": "https://maps.app.goo.gl/CZsrdZdvszbi1Eo69",
+        "telephone": "+201159125229",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "13:00",
+            "closes": "01:00"
+          }
+        ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 30.0824197,
+          "longitude": 31.6588338
+        }
+      },
+      {
+        "@type": "HairSalon",
+        "name": "BARBER Madinaty — B12",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "بجوار بيت الجملة ماركت، B12، مدينتي",
+          "addressLocality": "Madinaty",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "hasMap": "https://maps.app.goo.gl/RiEPsiAHepFNC2aQ6",
+        "telephone": "+201159125229",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "13:00",
+            "closes": "01:00"
+          }
+        ]
+      },
+      {
+        "@type": "HairSalon",
+        "name": "BARBER Madinaty — B15",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "بجوار محمد الفار ماركت، B15، مدينتي",
+          "addressLocality": "Madinaty",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "hasMap": "https://maps.app.goo.gl/6YmmWnykg3egYY6c7",
+        "telephone": "+201159125229",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "13:00",
+            "closes": "01:00"
+          }
+        ]
+      },
+      {
+        "@type": "HairSalon",
+        "name": "BARBER Madinaty — Craft Zone",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "بلوك 2، Craft Zone، مدينتي",
+          "addressLocality": "Madinaty",
+          "addressRegion": "Cairo Governorate",
+          "addressCountry": "EG"
+        },
+        "hasMap": "https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9",
+        "telephone": "+201159125229",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday"
+            ],
+            "opens": "11:00",
+            "closes": "02:00"
+          }
+        ]
+      }
     ]
   }
   </script>
@@ -105,6 +368,7 @@
       <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="hero__logo" width="180" height="270" decoding="async" />
       <h1 class="hero__tagline">THE ORIGINAL <span>BARBER</span></h1>
       <p class="hero__sub">Cuts • Beards • Fades</p>
+      <p class="hero__sub hero__sub--ar" lang="ar" dir="rtl">حلاق رجالي في مدينتي · ٥ فروع</p>
       <div class="hero__cta">
         <a href="#services" class="btn btn--primary" data-en="Our Services" data-ar="تصفّح خدماتنا">Our Services</a>
         <a href="https://wa.me/201159125229" target="_blank" rel="noopener" class="btn btn--ghost" data-en="WhatsApp Us" data-ar="تواصل عبر واتساب">WhatsApp Us</a>
@@ -123,7 +387,7 @@
       <div class="about__content reveal">
         <span class="section__kicker">ABOUT US</span>
         <h2 class="section__title">About BARBER</h2>
-        <p class="about__lead">At BARBER, every cut is handled by skilled professionals who obsess over the details. Our tools are always sanitized and our space is clean and comfortable — so you can sit back and enjoy the experience. With 5 branches across Madinaty, we're always close to you.</p>
+        <p class="about__lead" data-en="At BARBER, every cut is handled by skilled professionals who obsess over the details. Our tools are always sanitized and our space is clean and comfortable — so you can sit back and enjoy the experience. With 5 branches across Madinaty, we're always close to you." data-ar="في BARBER، كل قصّة بيعملها حلاقين محترفين مهتمين بأدق التفاصيل. أدواتنا متعقّمة دايمًا والمكان نضيف ومريح — عشان تقعد وتستمتع بالتجربة. وبـ 5 فروع في مدينتي، إحنا دايمًا قريبين منك.">At BARBER, every cut is handled by skilled professionals who obsess over the details. Our tools are always sanitized and our space is clean and comfortable — so you can sit back and enjoy the experience. With 5 branches across Madinaty, we're always close to you.</p>
 
         <ul class="about__features">
           <li>
@@ -358,7 +622,7 @@
         <img src="logo-layers/logo-full-transparent.png" alt="BARBER" class="footer__logo" loading="lazy" decoding="async" />
         <p class="footer__about"
            data-en="BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience."
-           data-ar="BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience.">BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience.</p>
+           data-ar="BARBER — حلاقة رجالي في مدينتي. خمس فروع بتقدّم قصّات مظبوطة، دقن نضيفة، وتجربة راقية ونضيفة.">BARBER — men's grooming across Madinaty. Five branches delivering sharp cuts, clean beards and a premium, hygienic experience.</p>
         <div class="footer__social">
           <a href="https://www.instagram.com/barber._.eg" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
           <a href="https://wa.me/201159125229" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>

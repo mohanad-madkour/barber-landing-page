@@ -239,6 +239,12 @@ a { color: inherit; text-decoration: none; }
   font-size: clamp(.8rem, 3vw, 1.1rem);
   text-transform: uppercase;
 }
+.hero__sub--ar {
+  font-family: var(--font-heading-ar);
+  letter-spacing: 0;
+  font-weight: 600;
+  margin-top: .35rem;
+}
 .hero__cta {
   display: flex;
   gap: 14px;
