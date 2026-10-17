@@ -759,6 +759,12 @@ a { color: inherit; text-decoration: none; }
   transition: border-color .2s;
 }
 .branch-popup__map:hover { border-color: var(--color-brass-light); }
+.branch-map a.branch-popup__page {
+  color: var(--color-text-muted);
+  font-size: .85rem; font-weight: 600;
+  text-decoration: none;
+}
+.branch-map a.branch-popup__page:hover { color: var(--color-brass-light); }
 .branch-badge {
   position: absolute;
   inset-block-start: 16px;

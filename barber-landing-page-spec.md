@@ -92,7 +92,7 @@
 | الفرع | الموقع | تليفون | مواعيد |
 |---|---|---|---|
 | Craft Zone | بلوك 2 | `[PHONE]` | `[HOURS]` |
-| B15 | بجوار محمد الفار ماركت | `[PHONE]` | `[HOURS]` |
+| B15 | بجوار محمود الفار ماركت | `[PHONE]` | `[HOURS]` |
 | B12 | بجوار بيت الجملة ماركت | `[PHONE]` | `[HOURS]` |
 | B10 | بجوار New Benny Market | `[PHONE]` | `[HOURS]` |
 | B8 | خلف The Mart — 🌟 فرع جديد (Now Open) | `[PHONE]` | `[HOURS]` |

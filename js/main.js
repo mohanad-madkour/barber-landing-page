@@ -9,8 +9,8 @@
 
   // UI strings for JS-rendered content
   const T = {
-    en: { priceSoon: "Price soon", hoursLabel: "Hours", map: "Open in Maps", nowOpen: "Now Open", galleryAlt: "BARBER work" },
-    ar: { priceSoon: "السعر قريبًا", hoursLabel: "المواعيد", map: "افتح على الخريطة", nowOpen: "Now Open", galleryAlt: "من أعمال BARBER" }
+    en: { priceSoon: "Price soon", hoursLabel: "Hours", map: "Open in Maps", nowOpen: "Now Open", galleryAlt: "BARBER work", page: "Branch page" },
+    ar: { priceSoon: "السعر قريبًا", hoursLabel: "المواعيد", map: "افتح على الخريطة", nowOpen: "Now Open", galleryAlt: "من أعمال BARBER", page: "صفحة الفرع" }
   };
 
   // Featured (important) services only — real prices in EGP. Full list is in-store.
@@ -30,11 +30,11 @@
   // ll = [lat, lng]. B10 is exact; the others are estimates inside Madinaty (draggable → fine-tune).
   // map = real Google Maps link for each branch.
   const branches = [
-    { name: "B10",        loc: "بجوار New Benny Market", ll: [30.0824197, 31.6588338], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/CZsrdZdvszbi1Eo69" },
-    { name: "B12",        loc: "بجوار بيت الجملة ماركت", ll: [30.0813061, 31.6741087], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/RiEPsiAHepFNC2aQ6" },
-    { name: "B15",        loc: "بجوار محمد الفار ماركت", ll: [30.0905698, 31.6779134], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/6YmmWnykg3egYY6c7" },
-    { name: "Craft Zone", loc: "بلوك 2",                 ll: [30.0727812, 31.6705481], hours: "11 AM – 2 AM", badge: null, map: "https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9" },
-    { name: "B8",         loc: "خلف The Mart",           ll: [30.1004982, 31.6516985], hours: "1 PM – 1 AM",  badge: true, map: "https://maps.app.goo.gl/wWXc1byb1pg5qFpL7" }
+    { slug: "b10", name: "B10",        loc: "بجوار New Benny Market", ll: [30.0824197, 31.6588338], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/CZsrdZdvszbi1Eo69" },
+    { slug: "b12", name: "B12",        loc: "بجوار بيت الجملة ماركت", ll: [30.0813061, 31.6741087], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/RiEPsiAHepFNC2aQ6" },
+    { slug: "b15", name: "B15",        loc: "بجوار محمود الفار ماركت", ll: [30.0905698, 31.6779134], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/6YmmWnykg3egYY6c7" },
+    { slug: "craft-zone", name: "Craft Zone", loc: "بلوك 2",                 ll: [30.0727812, 31.6705481], hours: "11 AM – 2 AM", badge: null, map: "https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9" },
+    { slug: "b8", name: "B8",         loc: "خلف The Mart",           ll: [30.1004982, 31.6516985], hours: "1 PM – 1 AM",  badge: true, map: "https://maps.app.goo.gl/wWXc1byb1pg5qFpL7" }
   ];
 
   // Gallery placeholders (Unsplash, B/W barbershop). Replace with real images later.
@@ -120,6 +120,7 @@
           '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>' +
           ' ' + t.map +
         '</a>' +
+        '<a class="branch-popup__page" href="/' + b.slug + '/">' + t.page + ' →</a>' +
       '</div>'
     );
   }
