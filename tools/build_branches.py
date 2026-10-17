@@ -229,6 +229,9 @@ def page(b, lang):
   <title>{title}</title>
   <meta name="description" content="{desc}" />
   <meta name="theme-color" content="#141412" />
+  <!-- Google Analytics 4 (setup + WhatsApp/map click tracking in js/analytics.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K58YYDP5PG"></script>
+  <script defer src="/js/analytics.js?v=1"></script>
   <link rel="canonical" href="{url}" />
   <link rel="alternate" hreflang="ar" href="{url_ar}" />
   <link rel="alternate" hreflang="en" href="{url_en}" />
