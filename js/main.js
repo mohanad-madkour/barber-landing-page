@@ -393,18 +393,26 @@
 
     // Both clips loop forever and never stop; we only fade which one is visible,
     // so there's no cut/freeze at the switch or when a clip repeats.
-    vids.forEach(function (v) {
-      v.loop = true;
-      v.muted = true;
-      const p = v.play();
-      if (p && p.catch) p.catch(function () {});
-    });
+    vids.forEach(function (v) { v.loop = true; v.muted = true; });
 
     if (reduceMotion) {
       show(0);
-      vids.forEach(function (v) { v.pause(); });
+      v1.pause();
       return;
     }
+
+    const p1 = v1.play();
+    if (p1 && p1.catch) p1.catch(function () {});
+
+    // Clip 2 isn't needed until the first crossfade — fetch it only after the
+    // page (images, fonts, map) has finished loading so it doesn't compete.
+    function startSecond() {
+      v2.preload = "auto";
+      const p = v2.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+    if (document.readyState === "complete") startSecond();
+    else window.addEventListener("load", startSecond, { once: true });
     show(0);
     timer = setTimeout(next, MAX_MS);
   })();

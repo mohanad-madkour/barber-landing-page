@@ -151,6 +151,22 @@ a { color: inherit; text-decoration: none; }
   cursor: pointer;
   transition: background .2s, color .2s, transform .2s;
 }
+/* inline SVG icons (sprite in index.html) — sized like the old icon font */
+.ico {
+  display: inline-block;
+  width: 1em; height: 1em;
+  fill: currentColor;
+  vertical-align: -.125em;
+}
+/* the two flags used by the language toggle (from flag-icons 7.2.3) */
+.fi {
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.fi-gb { background-image: url(../images/flags/gb.svg); }
+.fi-eg { background-image: url(../images/flags/eg.svg); }
 .lang-toggle .fi {
   width: 22px; height: 16px;
   border-radius: 3px;
