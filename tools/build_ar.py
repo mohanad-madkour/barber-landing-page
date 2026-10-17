@@ -17,7 +17,7 @@ OUT = os.path.join(ROOT, "ar", "index.html")
 
 AR_TITLE = "باربر مدينتي | BARBER — حلاق رجالي في مدينتي بـ 5 فروع"
 AR_DESC = ("BARBER حلاق رجالي في مدينتي بـ 5 فروع (B8، B10، B12، B15، Craft Zone). "
-           "قص شعر، فيد، تظبيط دقن، صبغة وتنظيف بشرة. مفتوح يوميًا لحد 1 بالليل — احجز على واتساب.")
+           "قص شعر، فيد، تظبيط دقن، صبغة وتنظيف بشرة. مفتوح يوميًا لحد 1 بالليل — تواصل معانا على واتساب.")
 AR_OG_TITLE = "BARBER مدينتي — حلاق رجالي بـ 5 فروع"
 
 
@@ -62,7 +62,10 @@ def main():
     s = re.sub(r'(<meta (?:property="og:description"|name="twitter:description") content=")[^"]*',
                r"\g<1>" + AR_DESC, s)
 
-    # 3) the page lives in /ar/, so make local asset paths root-absolute
+    # 3) footer branch links: English pages live under /en/, Arabic ones at the root
+    s = s.replace('<li><a href="/en/', '<li><a href="/')
+
+    # 4) the page lives in /ar/, so make local asset paths root-absolute
     s = re.sub(r'((?:src|href|poster)=")(?=(?:css|js|images|logo-layers|videos)/)', r"\g<1>/", s)
 
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

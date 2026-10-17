@@ -16,23 +16,73 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/" />
   </url>
   <url>
+    <loc>https://barberegypt.com/en/b8/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b8/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b8/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b8/" />
+  </url>
+  <url>
     <loc>https://barberegypt.com/b8/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b8/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b8/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b8/" />
+  </url>
+  <url>
+    <loc>https://barberegypt.com/en/b10/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b10/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b10/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b10/" />
   </url>
   <url>
     <loc>https://barberegypt.com/b10/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b10/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b10/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b10/" />
+  </url>
+  <url>
+    <loc>https://barberegypt.com/en/b12/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b12/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b12/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b12/" />
   </url>
   <url>
     <loc>https://barberegypt.com/b12/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b12/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b12/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b12/" />
+  </url>
+  <url>
+    <loc>https://barberegypt.com/en/b15/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b15/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b15/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b15/" />
   </url>
   <url>
     <loc>https://barberegypt.com/b15/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/b15/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/b15/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/b15/" />
+  </url>
+  <url>
+    <loc>https://barberegypt.com/en/craft-zone/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/craft-zone/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/craft-zone/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/craft-zone/" />
   </url>
   <url>
     <loc>https://barberegypt.com/craft-zone/</loc>
     <lastmod>2026-10-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://barberegypt.com/en/craft-zone/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://barberegypt.com/craft-zone/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://barberegypt.com/en/craft-zone/" />
   </url>
 </urlset>
