@@ -15,14 +15,14 @@
 
   // Featured (important) services only — real prices in EGP. Full list is in-store.
   const services = [
-    { name: "Haircut",           price: "180" },
-    { name: "Haircut + Beard",   price: "300" },
-    { name: "Beard",             price: "150" },
-    { name: "Blow-dry",          price: "120" },
-    { name: "Protein Treatment", price: "1000" },
-    { name: "Hair Color",        price: "300" },
-    { name: "Beard Color",       price: "150" },
-    { name: "Facial Cleansing",  price: "350" }
+    { name: "Haircut",           ar: "قص شعر",       price: "180" },
+    { name: "Haircut + Beard",   ar: "شعر + دقن",    price: "300" },
+    { name: "Beard",             ar: "دقن",          price: "150" },
+    { name: "Blow-dry",          ar: "سشوار",        price: "120" },
+    { name: "Protein Treatment", ar: "بروتين",       price: "1000" },
+    { name: "Hair Color",        ar: "صبغة شعر",     price: "300" },
+    { name: "Beard Color",       ar: "صبغة دقن",     price: "150" },
+    { name: "Facial Cleansing",  ar: "تنظيف بشرة",   price: "350" }
   ];
 
   // Branch names + addresses stay Arabic in both languages (real place references).
@@ -57,14 +57,14 @@
     star: '<svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>'
   };
 
-  /* -------- Render services as a price list (names stay Arabic) -------- */
+  /* -------- Render services as a price list -------- */
   const servicesGrid = document.getElementById("servicesGrid");
-  function renderServices() {
+  function renderServices(lang) {
     if (!servicesGrid) return;
     servicesGrid.innerHTML = services.map(function (s) {
       return (
         '<div class="srv-row">' +
-          '<span class="srv-name">' + s.name + '</span>' +
+          '<span class="srv-name">' + (lang === "ar" ? s.ar : s.name) + '</span>' +
           '<span class="srv-dots" aria-hidden="true"></span>' +
           '<span class="srv-price">' + s.price + ' <em>EGP</em></span>' +
         '</div>'
@@ -130,7 +130,7 @@
       html:
         '<div class="branch-marker' + (b.badge ? " is-new" : "") + (i === activeBranch ? " is-active" : "") + '">' +
           '<span class="branch-marker__dot">' +
-            '<img class="branch-marker__logo" src="logo-layers/logo-full-transparent.png" alt="BARBER" decoding="async" />' +
+            '<img class="branch-marker__logo" src="/logo-layers/logo-full-transparent.png" alt="BARBER" decoding="async" />' +
           '</span>' +
           '<span class="branch-marker__label">' + b.name + (b.badge ? ' · ' + T[lang].nowOpen : '') + '</span>' +
         '</div>',
@@ -231,8 +231,18 @@
   }
 
   /* -------- i18n engine + language toggle -------- */
-  let currentLang = "en";
-  try { const saved = localStorage.getItem("barber_lang"); if (saved === "ar" || saved === "en") currentLang = saved; } catch (e) {}
+  // Each language has its own URL ("/" English, "/ar/" Arabic) so search engines
+  // index both; the page's <html lang> decides which one we're on.
+  const PAGE_URL = { en: "/", ar: "/ar/" };
+  let currentLang = document.documentElement.lang === "ar" ? "ar" : "en";
+
+  // Visitors who picked Arabic before land on the Arabic page next time.
+  try {
+    if (currentLang === "en" && localStorage.getItem("barber_lang") === "ar") {
+      location.replace(PAGE_URL.ar + location.hash);
+      return;
+    }
+  } catch (e) {}
 
   const langToggle = document.getElementById("langToggle");
   const langToggleNav = document.getElementById("langToggleNav");
@@ -265,8 +275,6 @@
     if (langToggle) langToggle.innerHTML = toggleHtml;
     if (langToggleNav) langToggleNav.innerHTML = toggleHtml;
 
-    try { localStorage.setItem("barber_lang", lang); } catch (e) {}
-
     // grids were re-created after the scroll observer ran → reveal them
     if (!isInitial) {
       document.querySelectorAll("#servicesGrid .reveal, #galleryGrid .reveal, #branchesGrid .reveal")
@@ -275,7 +283,9 @@
   }
 
   function toggleLang() {
-    applyLang(currentLang === "ar" ? "en" : "ar", false);
+    const next = currentLang === "ar" ? "en" : "ar";
+    try { localStorage.setItem("barber_lang", next); } catch (e) {}
+    location.href = PAGE_URL[next] + location.hash;
   }
   if (langToggle) langToggle.addEventListener("click", toggleLang);
   if (langToggleNav) langToggleNav.addEventListener("click", function () {
