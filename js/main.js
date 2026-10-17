@@ -9,8 +9,8 @@
 
   // UI strings for JS-rendered content
   const T = {
-    en: { priceSoon: "Price soon", hoursLabel: "Hours", map: "Open in Maps", nowOpen: "Now Open", galleryAlt: "BARBER work", page: "Branch page" },
-    ar: { priceSoon: "السعر قريبًا", hoursLabel: "المواعيد", map: "افتح على الخريطة", nowOpen: "Now Open", galleryAlt: "من أعمال BARBER", page: "صفحة الفرع" }
+    en: { priceSoon: "Price soon", hoursLabel: "Hours", map: "Open in Maps", nowOpen: "Now Open", page: "Branch page" },
+    ar: { priceSoon: "السعر قريبًا", hoursLabel: "المواعيد", map: "افتح على الخريطة", nowOpen: "Now Open", page: "صفحة الفرع" }
   };
 
   // Featured (important) services only — real prices in EGP. Full list is in-store.
@@ -35,16 +35,6 @@
     { slug: "b15", name: "B15",        loc: "بجوار محمود الفار ماركت", ll: [30.0905698, 31.6779134], hours: "1 PM – 1 AM",  badge: null, map: "https://maps.app.goo.gl/6YmmWnykg3egYY6c7" },
     { slug: "craft-zone", name: "Craft Zone", loc: "بلوك 2",                 ll: [30.0727812, 31.6705481], hours: "11 AM – 2 AM", badge: null, map: "https://maps.app.goo.gl/fFCBS6Z8sCY5EHpq9" },
     { slug: "b8", name: "B8",         loc: "خلف The Mart",           ll: [30.1004982, 31.6516985], hours: "1 PM – 1 AM",  badge: true, map: "https://maps.app.goo.gl/wWXc1byb1pg5qFpL7" }
-  ];
-
-  // Gallery placeholders (Unsplash, B/W barbershop). Replace with real images later.
-  const gallery = [
-    "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1622286342621-4bd786c2447c?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=800&q=80",
-    "https://images.unsplash.com/photo-1517832606299-7ae9b720a186?auto=format&fit=crop&w=800&q=80"
   ];
 
   const icons = {
@@ -86,19 +76,6 @@
         '<div class="marquee-strip__group">' + group + '</div>' +
       '</div>';
   })();
-
-  /* -------- Render gallery -------- */
-  const galleryGrid = document.getElementById("galleryGrid");
-  function renderGallery(lang) {
-    const alt = T[lang].galleryAlt;
-    galleryGrid.innerHTML = gallery.map(function (src) {
-      return (
-        '<figure class="gallery__item reveal" data-full="' + src.replace('w=800', 'w=1400') + '">' +
-          '<img src="' + src + '" alt="' + alt + '" loading="lazy" decoding="async" />' +
-        '</figure>'
-      );
-    }).join("");
-  }
 
   /* -------- Render branches on a real dark map (Leaflet + Esri) -------- */
   let activeBranch = 0;
@@ -266,7 +243,6 @@
 
     // dynamic grids
     renderServices(lang);
-    renderGallery(lang);
     renderBranches(lang);
 
     // toggle button shows the OTHER language, with its flag (standard style)
@@ -278,7 +254,7 @@
 
     // grids were re-created after the scroll observer ran → reveal them
     if (!isInitial) {
-      document.querySelectorAll("#servicesGrid .reveal, #galleryGrid .reveal, #branchesGrid .reveal")
+      document.querySelectorAll("#servicesGrid .reveal, #branchesGrid .reveal")
         .forEach(function (el) { el.classList.add("is-visible"); });
     }
   }
@@ -299,38 +275,6 @@
   });
 
   applyLang(currentLang, true);
-
-  /* -------- Lightbox -------- */
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightboxImg");
-  document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
-  lightbox.addEventListener("click", function (e) { if (e.target === lightbox) closeLightbox(); });
-  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLightbox(); });
-  galleryGrid.addEventListener("click", function (e) {
-    const item = e.target.closest(".gallery__item");
-    if (!item) return;
-    lightboxImg.src = item.getAttribute("data-full");
-    lightbox.classList.add("lightbox--open");
-    lightbox.setAttribute("aria-hidden", "false");
-  });
-  function closeLightbox() {
-    lightbox.classList.remove("lightbox--open");
-    lightbox.setAttribute("aria-hidden", "true");
-  }
-
-  /* -------- Gallery carousel arrows -------- */
-  (function galleryArrows() {
-    const prev = document.getElementById("galPrev");
-    const next = document.getElementById("galNext");
-    if (!galleryGrid || !prev || !next) return;
-    function step() {
-      const card = galleryGrid.querySelector(".gallery__item");
-      const gap = 24;
-      return card ? card.getBoundingClientRect().width + gap : 320;
-    }
-    prev.addEventListener("click", function () { galleryGrid.scrollBy({ left: -step(), behavior: "smooth" }); });
-    next.addEventListener("click", function () { galleryGrid.scrollBy({ left: step(), behavior: "smooth" }); });
-  })();
 
   /* -------- Contact form → WhatsApp -------- */
   (function contactForm() {

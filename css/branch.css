@@ -47,17 +47,17 @@ html[lang="en"] .bp-hero h1 { font-family: var(--font-heading-en); font-weight: 
 .bp-cta .bp-ico, .bp-cta .ico { width: 17px; height: 17px; }
 
 /* sections */
-.bp-section { padding: 34px 0; border-top: 1px solid rgba(171, 130, 83, .18); }
+.bp-section { padding: 34px 0; border-top: 1px solid rgba(171, 130, 83, .18); text-align: center; }
 .bp-section h2 { font-size: 1.35rem; font-weight: 900; margin-bottom: 16px; }
 html[lang="en"] .bp-section h2 { font-family: var(--font-heading-en); font-weight: 700; }
 
-.bp-services { list-style: none; display: grid; gap: 2px; margin-bottom: 10px; max-width: 560px; }
+.bp-services { list-style: none; display: grid; gap: 2px; margin: 0 auto 10px; max-width: 560px; text-align: start; }
 .bp-services li { display: flex; align-items: baseline; gap: 10px; padding: 7px 0; font-weight: 600; }
 .bp-dots { flex: 1; border-bottom: 1px dotted rgba(171, 130, 83, .45); transform: translateY(-4px); }
 .bp-services b { color: var(--color-brass-light); font-family: var(--font-heading-en); white-space: nowrap; }
 .bp-services small { font-size: .7rem; color: var(--color-text-muted); }
 
-.bp-reviews { display: grid; gap: 14px; margin-bottom: 14px; }
+.bp-reviews { display: grid; gap: 14px; margin: 0 auto 14px; max-width: 980px; }
 .bp-review {
   background: var(--color-bg-secondary);
   border: 1px solid rgba(171, 130, 83, .2);
@@ -69,7 +69,7 @@ html[lang="en"] .bp-section h2 { font-family: var(--font-heading-en); font-weigh
 .bp-link { color: var(--color-brass-light); font-weight: 700; }
 .bp-link:hover { text-decoration: underline; }
 
-.bp-branches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.bp-branches { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 900px; margin: 0 auto; }
 .bp-branch {
   display: grid; gap: 2px;
   padding: 14px 16px; border-radius: var(--radius);
@@ -79,7 +79,6 @@ html[lang="en"] .bp-section h2 { font-family: var(--font-heading-en); font-weigh
 }
 .bp-branch:hover { border-color: var(--color-brass); transform: translateY(-2px); }
 .bp-branch b { font-family: var(--font-heading-en); color: var(--color-brass-light); font-size: 1.05rem; }
-.bp-main[dir="rtl"] .bp-branch b { text-align: right; }
 .bp-branch span { color: var(--color-text-muted); font-size: .88rem; }
 
 @media (max-width: 620px) {

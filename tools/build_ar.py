@@ -62,8 +62,8 @@ def main():
     s = re.sub(r'(<meta (?:property="og:description"|name="twitter:description") content=")[^"]*',
                r"\g<1>" + AR_DESC, s)
 
-    # 3) footer branch links: English pages live under /en/, Arabic ones at the root
-    s = s.replace('<li><a href="/en/', '<li><a href="/')
+    # 3) branch links: English pages live under /en/, Arabic ones at the root
+    s = s.replace('href="/en/', 'href="/')
 
     # 4) the page lives in /ar/, so make local asset paths root-absolute
     s = re.sub(r'((?:src|href|poster)=")(?=(?:css|js|images|logo-layers|videos)/)', r"\g<1>/", s)
