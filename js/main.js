@@ -209,9 +209,14 @@
   }
 
   /* -------- i18n engine + language toggle -------- */
-  // Each language has its own URL ("/" English, "/ar/" Arabic) so search engines
-  // index both; the page's <html lang> decides which one we're on.
+  // Each language has its own URL ("/" English, "/ar/" Arabic, "/services/" vs
+  // "/ar/services/" …) so search engines index both. The page's hreflang links say
+  // where its other-language version is; <html lang> says which one we're on.
   const PAGE_URL = { en: "/", ar: "/ar/" };
+  ["en", "ar"].forEach(function (l) {
+    const alt = document.querySelector('link[rel="alternate"][hreflang="' + l + '"]');
+    if (alt) PAGE_URL[l] = new URL(alt.href, location.href).pathname;
+  });
   let currentLang = document.documentElement.lang === "ar" ? "ar" : "en";
 
   // Visitors who picked Arabic before land on the Arabic page next time.
@@ -302,10 +307,15 @@
   })();
 
   /* -------- Header scroll state -------- */
+  // (only the home page has a hero video behind the header; elsewhere it stays solid)
   const header = document.getElementById("header");
-  window.addEventListener("scroll", function () {
-    header.classList.toggle("header--scrolled", window.scrollY > 40);
-  });
+  if (document.getElementById("hero")) {
+    window.addEventListener("scroll", function () {
+      header.classList.toggle("header--scrolled", window.scrollY > 40);
+    });
+  } else {
+    header.classList.add("header--scrolled");
+  }
 
   /* -------- Mobile nav -------- */
   const navToggle = document.getElementById("navToggle");

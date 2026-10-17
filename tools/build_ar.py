@@ -64,6 +64,8 @@ def main():
 
     # 3) branch links: English pages live under /en/, Arabic ones at the root
     s = s.replace('href="/en/', 'href="/')
+    # section pages: /services/ (English) -> /ar/services/ (Arabic)
+    s = re.sub(r'href="/(about|services|branches|locations|reviews|contact)/"', r'href="/ar/\g<1>/"', s)
 
     # 4) the page lives in /ar/, so make local asset paths root-absolute
     s = re.sub(r'((?:src|href|poster)=")(?=(?:css|js|images|logo-layers|videos)/)', r"\g<1>/", s)
